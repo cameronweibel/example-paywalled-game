@@ -1,0 +1,9 @@
+#gameCanvas {
+  width: 440px;
+  height: 275px;
+}
+
+#gameContainer,
+#accessForm {
+  display: none;
+}

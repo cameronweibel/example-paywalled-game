@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <title>Spacer.io</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">        <link href="styles.css" rel="stylesheet" />
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#">Spacer.io</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">About Me</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><hr class="dropdown-divider" /></li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="text-center mt-5">
+                <h1>Welcome to the Spacer.io</h1>
+                <p class="lead">Log in below to start playing!</p>
+            </div>
+            <div id="userForm" class="row justify-content-center">
+              <div class="col-12 col-md-6">
+                <div>
+                  <div class="mt-5 mb-3">
+                    <label for="email" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="email">
+                  </div>
+                  <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password">
+                  </div>
+                  <button onclick="signIn()" class="btn btn-primary">Sign In</button>
+                  <button onclick="registerUser()" class="btn btn-secondary">Create Account</button>
+                </div>
+              </div>
+            </div>
+            <div id="accessForm" class="row justify-content-center">
+              <div class="col-12 col-md-6">
+                <div>
+                  
+                  <div class="mt-5 mb-3">
+                    <label for="access-code" class="form-label">Access Code (<a target="_blank" href="https://buy.stripe.com/test_3cs4gZ8oVcYr6is288">Purchase</a>)</label>
+                    <input type="text" class="form-control" id="access-code">
+                  </div>
+                  <button onclick="submitAccessCode()" class="btn btn-primary">Submit</button>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div id="gameContainer" class="container">
+          <div class="row justify-content-center">
+            <canvas id="gameCanvas"></canvas>
+          </div>
+      </div>
+        <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase.js"></script>
+        <script>
+          // Your web app's Firebase configuration
+          const firebaseConfig = {
+            apiKey: "AIzaSyAAC6Jey6Sq2YVPPDQLvz_Di9dxnYHYER0",
+            authDomain: "spacer-2387d.firebaseapp.com",
+            projectId: "spacer-2387d",
+            storageBucket: "spacer-2387d.appspot.com",
+            messagingSenderId: "449711500794",
+            appId: "1:449711500794:web:d1c13bdd806b137a5e8843"
+          };
+        
+          // Initialize Firebase
+          const app = firebase.initializeApp(firebaseConfig);
+        </script>
+        <script src="https://kaboomjs.com/lib/0.5.0/kaboom.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="main.js"></script>
+    </body>
+</html>
